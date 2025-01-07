@@ -1,0 +1,26 @@
+<div class="card p-4 mt-4">
+    <form #studentForm="ngForm">
+        <div class="mb-3 form-group">
+            <label for="name" class="form-label">Name <sup class="text-danger fw-bold">*</sup></label>
+            <input id="name" #name="ngModel" ngModel type="text" class="form-control" [(ngModel)]="student.name" name="name" required>
+            <span *ngIf="name.hasError('required') && name.touched" class="text-danger">Name is mandatory While submitting Student Form!</span>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="age" class="form-label ">Age <sup class="text-danger fw-bold">*</sup></label>
+            <input id="age" #age="ngModel" ngModel type="text" class="form-control" [(ngModel)]="student.age" name="age" required>
+            <span *ngIf="age.hasError('required') && age.touched" class="text-danger">age is mandatory While submitting Student Form!</span>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="email" class="form-label">Email <sup class="text-danger fw-bold">*</sup></label>
+            <input id="email" #email="ngModel" ngModel type="text" type="email" class="form-control" [(ngModel)]="student.email" name="email" required>
+            <span *ngIf="email.hasError('required') && email.touched" class="text-danger">email is mandatory While submitting Student Form!</span>
+        </div>
+        <div class="mb-3 form-group">
+            <label for="rollNumber" class="form-label">Roll Number <sup class="text-danger fw-bold">*</sup></label>
+            <input id="rollNumber" #rollNo="ngModel" ngModel type="text" type="text" class="form-control" [(ngModel)]="student.rollNumber" name="rollNumber" required>
+            <span *ngIf="rollNo.hasError('required') && rollNo.touched" class="text-danger">roll No. is mandatory While submitting Student Form!</span>
+        </div>
+        <button type="button" class="btn btn-success mr-4" (click)="addStudent(studentForm)">Add Student</button>
+        <button type="reset" class="btn btn-danger">Clear Form</button>
+    </form>
+</div>

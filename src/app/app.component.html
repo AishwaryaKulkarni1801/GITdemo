@@ -1,0 +1,25 @@
+
+<div class="container">
+<div class="row justify-content-center">
+  <div class="mt-4">
+    <button class="btn mr-4 btn-primary" (click)="showForm()">Add Student Form</button>
+    <button class="btn btn-primary" (click)="showStudents()">View Students</button>
+  </div>
+  
+ 
+  
+</div>
+
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <ng-container *ngIf="pageToShow === 'stdForm'">
+      <app-std-form></app-std-form>
+    </ng-container>
+    
+    <ng-container *ngIf="pageToShow === 'searchScreen'">
+      <app-search-screen></app-search-screen>
+    </ng-container>
+  </div>
+</div>
+</div>
+
